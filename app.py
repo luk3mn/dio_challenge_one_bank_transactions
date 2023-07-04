@@ -24,6 +24,7 @@ while True:
         if deposit > 0:
             balance += deposit
             deposits.append(deposit)
+            extract = "available"
     elif opcao == "w" or opcao == "W":
         temp_withdraw: float = 0
         temp_withdraw_quantity: int = 0
@@ -39,6 +40,7 @@ while True:
                     balance -= withdraw_value
                     withdraws.append(withdraw_value)
                     print(f"${withdraw_value} has been withdraw")
+                    extract = "available"
                 else:
                     print(f"The withdraw limit of R$500 has been reached or {WITHDRAW_LIMIT} withdraw has been reached")
             else:
@@ -46,7 +48,15 @@ while True:
         else:
             print("The withdraw limit of R$500 has been reached")
     elif opcao == "e" or opcao == "E":
-        print("Extract")
+        if extract == "":
+            print("No transactions have been made on the account")
+        else:
+            print(f"""
+                All withdrawals: {withdraws}
+                All deposits: {deposits}
+                Withdraws today: {withdraw_quantity}
+                Current balance is R${balance:.2f}
+            """)
     elif opcao == "q" or opcao == "Q":
         break
     else:
