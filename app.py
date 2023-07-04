@@ -1,6 +1,6 @@
 menu = """
 [d] Deposit
-[s] Withdraw
+[w] Withdraw
 [e] Extract
 [q] Quit
 
@@ -16,13 +16,13 @@ while True:
 
     opcao = input(menu)
 
-    if opcao == "d":
+    if opcao == "d" or opcao == "D":
         print("Deposit")
-    elif opcao == "s":
+    elif opcao == "w" or opcao == "W":
         print("Withdraw")
-    elif opcao == "e":
+    elif opcao == "e" or opcao == "E":
         print("Extract")
-    elif opcao == "q" | "Q":
+    elif opcao == "q" or opcao == "Q":
         break
     else:
         print("Invalid transaction, please select your transaction again")
