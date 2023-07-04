@@ -12,12 +12,16 @@ extract: str = ""
 withdraw_quantity: int = 0
 WITHDRAW_LIMIT = 3
 
+deposits = []
 while True:
 
     opcao = input(menu)
 
     if opcao == "d" or opcao == "D":
-        print("Deposit")
+        deposit = float(input("Set your deposit value: "))
+        if deposit > 0:
+            balance += deposit
+            deposits.append(deposit)
     elif opcao == "w" or opcao == "W":
         temp_balance: float = 0
         temp_withdraw_quantity: int = 0
